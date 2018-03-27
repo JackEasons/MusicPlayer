@@ -8,7 +8,7 @@ var app = express()
 
 var apiRoutes = express.Router()
 
-apiRoutes.get('/getDiscList', function (req, res) {
+apiRoutes.get('/getDiscList', function(req, res) {
   var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
   axios.get(url, {
     headers: {
@@ -23,7 +23,7 @@ apiRoutes.get('/getDiscList', function (req, res) {
   })
 })
 
-apiRoutes.get('/getSongList', function (req, res) {
+apiRoutes.get('/getSongList', function(req, res) {
   var url = 'https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg'
   axios.get(url, {
     headers: {
@@ -38,7 +38,7 @@ apiRoutes.get('/getSongList', function (req, res) {
   })
 })
 
-apiRoutes.get('/lyric', function (req, res) {
+apiRoutes.get('/lyric', function(req, res) {
   var url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg'
 
   axios.get(url, {
@@ -66,7 +66,7 @@ app.use('/api', apiRoutes)
 
 app.use(express.static('./dist'))
 
-module.exports = app.listen(port, function (err) {
+module.exports = app.listen(port, function(err) {
   if (err) {
     console.log(err)
     return
